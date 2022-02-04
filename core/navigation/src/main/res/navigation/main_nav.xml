@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/movie_nav_graph"
+    app:startDestination="@id/listFragment">
+
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.example.experimental.singleActivity.modules.list.ui.ListFragment"
+        android:label="Movie List Fragment" >
+        <action
+            android:id="@+id/listFragmentToHomeFragment"
+            app:destination="@id/homeFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/recyclerViewScaleCenter"
+        android:name="com.example.experimental.custom.animation.reyclerviewScaleCenter.RecyclerViewScaleCenterFragment"
+        android:label="RecyclerView Scale Center" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.features.profile.ProfileFragment"/>
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.features.home.HomeFragment">
+        <deepLink app:uri="@string/home_fragment"/>
+    </fragment>
+
+</navigation>
