@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.experimental.databinding.ItemMovieBinding
 import com.example.experimental.singleActivity.data.common.models.Movie
-import com.example.experimental.singleActivity.modules.list.ui.ItemMovie
+//import com.example.experimental.singleActivity.modules.list.ui.ItemMovie
 import javax.inject.Inject
 
 class ListAdapter @Inject constructor() : PagingDataAdapter<Movie, MovieViewHolder>(ListDiffUtil) {
@@ -36,11 +36,12 @@ class ListAdapter @Inject constructor() : PagingDataAdapter<Movie, MovieViewHold
 class MovieViewHolder(private val  binding: ItemMovieBinding): RecyclerView.ViewHolder(binding.root){
     fun bind(movie: Movie, onClick: () -> Unit){
         movie.posterPath = "https://image.tmdb.org/t/p/w500/${movie.posterPath}"
-        binding.myComposable.setContent {
-            ItemMovie(movie = movie)
-        }
-        binding.myComposable.setOnClickListener {
-            onClick()
-        }
+        binding.tvName.text = movie.title
+//        binding.myComposable.setContent {
+//            ItemMovie(movie = movie)
+//        }
+//        binding.myComposable.setOnClickListener {
+//            onClick()
+//        }
     }
 }

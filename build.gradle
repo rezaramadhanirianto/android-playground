@@ -1,14 +1,12 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
-    ext.kotlin_version = "1.5.0"
-
     repositories {
         google()
         mavenCentral()
     }
     dependencies {
-        classpath "com.android.tools.build:gradle:7.0.0"
-        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.31'
+        classpath "com.android.tools.build:gradle:7.0.4"
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.10'
         classpath "com.google.dagger:hilt-android-gradle-plugin:2.38.1"
         def nav_version = "2.4.0"
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
@@ -23,7 +21,9 @@ task clean(type: Delete) {
 
 subprojects{
     afterEvaluate { project ->
-        if (project.hasProperty('android')) {
+        if (project.hasProperty('android')
+                && !name.equalsIgnoreCase('app')
+        ) {
             android {
                 compileSdk 31
 
