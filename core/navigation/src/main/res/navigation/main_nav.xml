@@ -26,7 +26,6 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.features.home.HomeFragment">
-        <deepLink app:uri="@string/home_fragment"/>
     </fragment>
 
 </navigation>

@@ -1,5 +1,6 @@
 package com.example.experimental.singleActivity.modules.list.ui
 
+import android.content.Context
 import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -33,6 +34,10 @@ class ListFragment : Fragment() {
     @Inject
     lateinit var navConstant: NavConstant
 
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -54,12 +59,12 @@ class ListFragment : Fragment() {
     }
 
     private fun setupViewModel(){
-        viewmodel.movies.observe(viewLifecycleOwner, {
+        viewmodel.movies.observe(viewLifecycleOwner) {
             lifecycleScope.launch {
                 adapter.submitData(it)
                 adapter.changeUI()
             }
-        })
+        }
 
     }
 
@@ -72,13 +77,17 @@ class ListFragment : Fragment() {
         binding.rv.layoutManager = layoutManager
         binding.rv.adapter = adapter
         adapter.onClick = {
-//            findNavController().navigate(ListFragment)
-//            findNavController().navigate(Uri.parse(navConstant.homeFragment)) // Use Deep Link
+//            findNavController().navigate(ListFragmentA)
+            findNavController().navigate(Uri.parse("https://cobacoba.com/listfragment")) // Use Deep Link
         }
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    override fun onDetach() {
+        super.onDetach()
     }
 }
