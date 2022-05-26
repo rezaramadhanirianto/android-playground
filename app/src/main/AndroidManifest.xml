@@ -1,8 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-package="com.example.experimental">
+    package="com.example.experimental">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
         android:name=".App"
@@ -13,11 +14,14 @@ package="com.example.experimental">
         android:supportsRtl="true"
         android:theme="@style/Theme.Experimental">
         <activity
+            android:name=".lib.epoxy.EpoxyRecyclerViewActivity"
+            android:exported="false" />
+        <activity
             android:name=".liveDataRecyclerView.RecyclerViewActivity"
             android:exported="true" />
         <activity
             android:name=".singleActivity.SingleActivity"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".custom.transition.SecondActivity"
             android:exported="true" />
@@ -33,26 +37,26 @@ package="com.example.experimental">
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".custom.fragment.ExampleAttachActivity"
-            android:exported="true"/>
+        <activity
+            android:name=".custom.fragment.ExampleAttachActivity"
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:screenOrientation="fullSensor" />
-
-        <activity android:name=".configurationChanges.ConfigurationChangesActivity"
+        <activity
+            android:name=".configurationChanges.ConfigurationChangesActivity"
             android:exported="true"
-            android:screenOrientation="fullSensor"/>
-
+            android:screenOrientation="fullSensor" />
         <activity
             android:name=".custom.service.ServiceActivity"
             android:exported="true"
-            android:launchMode="singleTask"/>
+            android:launchMode="singleTask" />
         <activity
             android:name=".custom.pendingIntent.PendingIntentActivity"
             android:exported="true" />
 
-        <service android:name=".custom.service.foreground.MyForegroundService"/>
+        <service android:name=".custom.service.foreground.MyForegroundService" />
     </application>
+
 </manifest>

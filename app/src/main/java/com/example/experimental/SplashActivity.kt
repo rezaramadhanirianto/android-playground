@@ -12,6 +12,7 @@ import com.example.experimental.custom.fragment.ExampleAttachActivity
 import com.example.experimental.custom.pendingIntent.PendingIntentActivity
 import com.example.experimental.custom.service.ServiceActivity
 import com.example.experimental.custom.transition.FirstActivity
+import com.example.experimental.lib.epoxy.EpoxyRecyclerViewActivity
 import com.example.experimental.liveDataRecyclerView.RecyclerViewActivity
 import com.example.experimental.singleActivity.SingleActivity
 import kotlinx.coroutines.MainScope
@@ -26,8 +27,7 @@ class SplashActivity : AppCompatActivity() {
 //        NumberCounter.start()
         Handler(Looper.getMainLooper())
             .postDelayed({
-                startActivity(Intent(this, ExampleAttachActivity::class.java))
-                finish()
-            }, 3000)
+                startActivity(Intent(this, EpoxyRecyclerViewActivity::class.java))
+            }, 1000)
     }
 }
