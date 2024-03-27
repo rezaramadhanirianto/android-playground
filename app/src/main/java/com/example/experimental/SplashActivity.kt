@@ -15,6 +15,7 @@ import com.example.experimental.custom.transition.FirstActivity
 import com.example.experimental.lib.epoxy.EpoxyRecyclerViewActivity
 import com.example.experimental.liveDataRecyclerView.RecyclerViewActivity
 import com.example.experimental.singleActivity.SingleActivity
+import com.example.experimental.toolbar.TransparentAppBarAndSystemBar
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.delay
@@ -27,7 +28,7 @@ class SplashActivity : AppCompatActivity() {
 //        NumberCounter.start()
         Handler(Looper.getMainLooper())
             .postDelayed({
-                startActivity(Intent(this, EpoxyRecyclerViewActivity::class.java))
+                startActivity(Intent(this, TransparentAppBarAndSystemBar::class.java))
             }, 1000)
     }
 }

@@ -14,6 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Experimental">
         <activity
+            android:name=".toolbar.TransparentAppBarAndSystemBar"
+            android:exported="false" />
+        <activity
             android:name=".lib.epoxy.EpoxyRecyclerViewActivity"
             android:exported="false" />
         <activity

@@ -55,6 +55,7 @@ dependencies {
     implementation google.material
     implementation android.constraint
     implementation android.activity
+    implementation 'androidx.activity:activity:1.8.0'
 
     def preference_version = "1.1.1"
     implementation "androidx.preference:preference-ktx:$preference_version"
